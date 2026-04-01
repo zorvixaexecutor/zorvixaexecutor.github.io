@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Page Not Found</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://api.dicebear.com/7.x/initials/svg?seed=Z&backgroundColor=8a2be2&radius=50">
+
+    <style>
+        :root {
+            --primary-purple: #8a2be2;
+            --dark-purple: #310062;
+            --bg-black: #050505;
+            --card-bg: #0d0d10;
+            --text-gray: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid #1a1a22;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+            max-width: 650px;
+            width: 95%;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(145deg, var(--primary-purple), var(--dark-purple));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            letter-spacing: 4px;
+            margin: 0 0 20px 0;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .error-msg {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            background: var(--primary-purple);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-icon">Z</div>
+        <h1>404</h1>
+        <div class="error-msg">
+            Oops! The page you are looking for does not exist.
+        </div>
+        <button class="btn" onclick="goBack()">Go Back to Index</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'https://zorvixaexecutor.github.io';
+        }
+    </script>
+</body>
+</html>
