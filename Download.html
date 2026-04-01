@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zorvixa | Uwu</title>
+
+    <!-- Discord / Social Embed Meta -->
+    <meta property="og:title" content="Zorvixa Executor V1.4">
+    <meta property="og:description" content="Make sure you run ZorvixaExecutor.ps1 to prevent crashes. Still in beta, PC only. Level 8, creds to Ryzen Zorvixa. Download now or join Discord!">
+    <meta property="og:image" content="https://api.dicebear.com/7.x/initials/svg?seed=Z&backgroundColor=8a2be2&radius=50">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zorvixa Executor V1.4">
+    <meta name="twitter:description" content="Make sure you run ZorvixaExecutor.ps1 to prevent crashes. Still in beta, PC only. Level 8, creds to Ryzen Zorvixa. Download now or join Discord!">
+    <meta name="twitter:image" content="https://api.dicebear.com/7.x/initials/svg?seed=Z&backgroundColor=8a2be2&radius=50">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://api.dicebear.com/7.x/initials/svg?seed=Z&backgroundColor=8a2be2&radius=50">
+
+    <style>
+        :root {
+            --primary-purple: #8a2be2;
+            --dark-purple: #310062;
+            --bg-black: #050505;
+            --card-bg: #0d0d10;
+            --text-gray: #a0a0a0;
+            --discord-blurple: #5865F2;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid #1a1a22;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+            max-width: 650px;
+            width: 95%;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(145deg, var(--primary-purple), var(--dark-purple));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+            animation: icon-pulse 2s infinite ease-in-out;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        @keyframes icon-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        .title-wrapper { display: flex; justify-content: center; margin-bottom: 10px; }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            letter-spacing: 8px;
+            margin: 0;
+            font-weight: 900;
+            color: #ffffff;
+            border-right: 4px solid var(--primary-purple);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 1.5s steps(7, end) forwards, blink 0.8s infinite;
+        }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { 50% { border-color: transparent; } }
+
+        .status-badge {
+            background: rgba(138, 43, 226, 0.15);
+            color: var(--primary-purple);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid var(--primary-purple);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        .download-btn { background: var(--primary-purple); }
+        .discord-btn { background: var(--discord-blurple); }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            filter: brightness(1.2);
+        }
+
+        .note-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-purple);
+            text-align: left;
+        }
+
+        .note-header { color: var(--primary-purple); font-weight: bold; display: block; margin-bottom: 5px; }
+        .note-body { color: var(--text-gray); font-size: 0.95rem; line-height: 1.5; }
+
+        #notif-box {
+            position: fixed; top: 20px; right: 20px; background: #1a1a20;
+            border-left: 4px solid var(--primary-purple); color: white;
+            padding: 15px 25px; border-radius: 8px; display: none; z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="notif-box">Notification</div>
+
+    <div class="container">
+        <div class="logo-icon">Z</div>
+        <div class="status-badge">STABLE | 99% UNC</div>
+        
+        <div class="title-wrapper">
+            <h1>ZORVIXA</h1>
+        </div>
+
+        <div class="btn-group">
+            <a href="Zorvixa.v1.4.zip" class="download-btn btn" id="dlBtn" download>
+                Download Now
+            </a>
+            <a href="https://discord.gg/8k3gjnJEhF" target="_blank" class="discord-btn btn" id="dsBtn">
+                Join Discord
+            </a>
+        </div>
+
+        <div class="note-container">
+            <span class="note-header">Note: Zorvixa Executor V1.4</span>
+            <div class="note-body">
+                Make Sure you run <b>ZorvixaExecutor.ps1</b> to prevent crashes, Still in beta version, works only on PC. 
+                Level 8, creds to <b>Ryzen Zorvixa</b> for making the API. 
+                <br><br>
+                To use ScriptBlox: Type the script you wanna use and click refresh. 
+                You <b>if it crashes alot </b>Run <b>ZorvixaExecutor.ps1</b> to avoid most crashes.
+                <br><br>
+                Have Fun.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const notif = document.getElementById('notif-box');
+
+        function showNotif(text) {
+            notif.innerText = text;
+            notif.style.display = 'block';
+            setTimeout(() => { notif.style.display = 'none'; }, 4000);
+        }
+
+        document.getElementById('dlBtn').addEventListener('click', () => {
+            showNotif('Downloading Zorvixa Executor...');
+        });
+
+        document.getElementById('dsBtn').addEventListener('click', () => {
+            showNotif('Joining Discord...');
+        });
+
+        // Clean finish for typing animation
+        setTimeout(() => {
+            document.querySelector('h1').style.borderRight = "none";
+        }, 1600);
+    </script>
+
+</body>
+</html>
