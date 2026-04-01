@@ -149,10 +149,39 @@
         .note-header { color: var(--primary-purple); font-weight: bold; display: block; margin-bottom: 5px; }
         .note-body { color: var(--text-gray); font-size: 0.95rem; line-height: 1.5; }
 
+        /* NEW BUTTON */
+        .trust-btn {
+            display: block;
+            width: 80%;
+            margin: 30px auto 0 auto;
+            padding: 16px;
+            text-align: center;
+            background: transparent;
+            border: 2px solid var(--primary-purple);
+            border-radius: 10px;
+            color: var(--primary-purple);
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .trust-btn:hover {
+            background: var(--primary-purple);
+            color: white;
+            transform: translateY(-2px);
+        }
+
         #notif-box {
-            position: fixed; top: 20px; right: 20px; background: #1a1a20;
-            border-left: 4px solid var(--primary-purple); color: white;
-            padding: 15px 25px; border-radius: 8px; display: none; z-index: 100;
+            position: fixed; 
+            top: 20px; 
+            right: 20px; 
+            background: #1a1a20;
+            border-left: 4px solid var(--primary-purple); 
+            color: white;
+            padding: 15px 25px; 
+            border-radius: 8px; 
+            display: none; 
+            z-index: 100;
         }
     </style>
 </head>
@@ -189,6 +218,15 @@
                 Have Fun.
             </div>
         </div>
+
+        <!-- NEW BUTTON -->
+        <a href="https://www.virustotal.com/gui/file/5ab9b09a0d035675dbf00e3b20286e247e56288fa62b4b71e36b54075a7053ab" 
+           target="_blank" 
+           class="trust-btn" 
+           id="trustBtn">
+           Why You Can Trust Us
+        </a>
+
     </div>
 
     <script>
@@ -208,7 +246,10 @@
             showNotif('Joining Discord...');
         });
 
-        // Clean finish for typing animation
+        document.getElementById('trustBtn').addEventListener('click', () => {
+            showNotif('Opening VirusTotal scan...');
+        });
+
         setTimeout(() => {
             document.querySelector('h1').style.borderRight = "none";
         }, 1600);
